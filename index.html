@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="https://{{domain}}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="/">{{site_name}}</a>
+  <nav><a href="/#blog">Блог</a><a href="/#connect">Подключение</a></nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>{{tagline}}</h1>
+      <p class="lead">Касса, склад, зарплаты и аналитика в одном окне. Розница, сфера услуг, общепит и смешанный бизнес.</p>
+      <a class="cta" href="#blog">Читать руководства</a>
+      <p class="hint">Бесплатно при продажах до $1000 в месяц</p>
+    </div>
+  </section>
+
+  <section id="blog" class="features">
+    <h2>Руководства по учёту</h2>
+    <div class="grid">
+      {{posts}}
+    </div>
+  </section>
+
+  <section id="connect" class="steps">
+    <h2>Быстрый запуск</h2>
+    <ol>
+      <li><b>Шаг 1. Регистрация</b><span>Занимает 2 минуты без привязки банковской карты</span></li>
+      <li><b>Шаг 2. Импорт номенклатуры</b><span>Загрузка товаров и цен из Excel за 10 минут</span></li>
+      <li><b>Шаг 3. Первый чек</b><span>Готовность к продажам с любого устройства</span></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© {{year}} {{site_name}} · {{domain}}</p>
+</footer>
+</body>
+</html>

@@ -5,46 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{title}}</title>
 <meta name="description" content="{{description}}">
-<meta name="keywords" content="{{keywords}}">
-<link rel="canonical" href="https://{{domain}}/{{slug}}/">
-<meta property="og:type" content="website">
+<link rel="canonical" href="https://{{domain}}/blog/{{slug}}/">
+<meta property="og:type" content="article">
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{description}}">
-<meta property="og:image" content="https://{{domain}}/{{image}}">
+<meta property="og:image" content="https://{{domain}}{{image}}">
+<meta property="og:url" content="https://{{domain}}/blog/{{slug}}/">
+<meta property="og:site_name" content="{{site_name}}">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{{jsonld}}</script>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header class="site-header">
   <a class="logo" href="/">{{site_name}}</a>
-  <nav><a href="/">Каталог</a><a href="/#connect">Подключение</a><a href="/#contact">Контакты</a></nav>
+  <nav><a href="/">Блог</a><a href="/#connect">Подключение</a></nav>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="hero-text">
+  <article>
+    <nav class="crumbs"><a href="/">Главная</a> / <a href="/#blog">Блог</a> / <span>{{category}}</span></nav>
+
+    <header class="post-head">
+      <p class="tag">{{category}}</p>
       <h1>{{h1}}</h1>
-      <p class="lead">{{lead}}</p>
-      <a class="cta" href="/#signup">Попробовать бесплатно</a>
-      <p class="hint">Бесплатно при продажах до $1000 в месяц</p>
-    </div>
-    <div class="hero-image"><img src="/{{image}}" alt="{{h1}}" width="640" height="480"></div>
-  </section>
+      <p class="lead">{{intro}}</p>
+      <p class="meta">Опубликовано <time datetime="{{published}}">{{published}}</time> · обновлено <time datetime="{{updated}}">{{updated}}</time></p>
+    </header>
 
-  <section class="features">
-    <h2>Что умеет</h2>
-    <div class="grid">
-      {{features}}
-    </div>
-  </section>
+    <figure class="post-cover">
+      <img src="{{image}}" alt="{{image_alt}}" width="1200" height="700" loading="lazy">
+    </figure>
 
-  <section id="connect" class="steps">
-    <h2>Быстрый запуск</h2>
-    <ol>
-      <li><b>Шаг 1. Регистрация</b><span>Занимает 2 минуты без привязки банковской карты</span></li>
-      <li><b>Шаг 2. Импорт номенклатуры</b><span>Загрузка товаров и цен из Excel за 10 минут</span></li>
-      <li><b>Шаг 3. Первый чек</b><span>Готовность к продажам с любого устройства</span></li>
-    </ol>
-  </section>
+    <div class="prose">
+      {{sections}}
+    </div>
+
+    <section class="faq">
+      <h2>Частые вопросы</h2>
+      {{faq}}
+    </section>
+
+    <section class="related">
+      <h2>Читайте также</h2>
+      <ul>{{related}}</ul>
+    </section>
+
+    <aside class="cta-box">
+      <h2>Попробуйте ATLAS POS</h2>
+      <p>Касса, склад и аналитика в одном окне. Бесплатно при продажах до $1000 в месяц.</p>
+      <a class="cta" href="https://{{domain}}">Начать бесплатно</a>
+    </aside>
+  </article>
 </main>
 
 <footer class="site-footer">

@@ -1,6 +1,6 @@
 # atlas-seo
 
-Статический генератор SEO-страниц для **atlaspos.ru** — на каждую нишу отдельный лендинг с точным title/description/canonical.
+Статический генератор SEO-блога для **atlaspos.ru** — статьи по нишам с точными title/description, JSON-LD (Article + FAQ), sitemap и robots.
 
 **Разработка:** Bokov777
 
@@ -8,25 +8,40 @@
 
 ```
 atlas-seo/
-├── generate.py       # рендер страниц из pages.json по template.html
-├── pages.json        # контент: site + список страниц
-├── template.html     # HTML-шаблон с {{плейсхолдерами}}
+├── generate.py       # сборка dist/ из pages.json
+├── pages.json        # массив статей (slug, title, description, h1, sections, faq, related)
+├── template.html     # шаблон статьи (JSON-LD, OG, FAQ, related)
+├── index.html        # шаблон хаба со списком статей
 └── public/
-    ├── images/       # исходные изображения (coffee.jpg, shop.jpg)
-    ├── style.css     # общий CSS
-    └── generated/    # результат сборки (по папке на slug)
+    ├── images/       # coffee.jpg, shop.jpg
+    └── style.css
 ```
 
-## Запуск
+## Сборка
 
 ```bash
-python3 generate.py --clean
+python3 generate.py        # → dist/
 ```
 
-Результат: `public/generated/<slug>/index.html`.
+Результат:
 
-## Добавить страницу
+```
+dist/
+├── index.html
+├── style.css
+├── sitemap.xml
+├── robots.txt
+├── images/
+└── blog/
+    ├── uchet-v-kofeyne/index.html
+    └── inventarizaciya-magazina/index.html
+```
 
-1. Скопируй объект в `pages.json → pages`, поменяй `slug`, `title`, `description`, `keywords`, `hero`, `features`.
-2. Положи картинку в `public/images/`.
-3. Запусти генератор.
+`dist/` — готовый к деплою статический сайт (корень домена atlaspos.ru).
+
+## Добавить статью
+
+1. Скопируй объект в `pages.json`.
+2. Поменяй `slug`, `title`, `description`, `h1`, `category`, `sections`, `faq`, `related`.
+3. Положи изображение в `public/images/` и укажи `/images/<file>.jpg`.
+4. `python3 generate.py`.
