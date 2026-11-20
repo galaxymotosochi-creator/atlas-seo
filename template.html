@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="keywords" content="{{keywords}}">
+<link rel="canonical" href="https://{{domain}}/{{slug}}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="https://{{domain}}/{{image}}">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="/">{{site_name}}</a>
+  <nav><a href="/">Каталог</a><a href="/#connect">Подключение</a><a href="/#contact">Контакты</a></nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>{{h1}}</h1>
+      <p class="lead">{{lead}}</p>
+      <a class="cta" href="/#signup">Попробовать бесплатно</a>
+      <p class="hint">Бесплатно при продажах до $1000 в месяц</p>
+    </div>
+    <div class="hero-image"><img src="/{{image}}" alt="{{h1}}" width="640" height="480"></div>
+  </section>
+
+  <section class="features">
+    <h2>Что умеет</h2>
+    <div class="grid">
+      {{features}}
+    </div>
+  </section>
+
+  <section id="connect" class="steps">
+    <h2>Быстрый запуск</h2>
+    <ol>
+      <li><b>Шаг 1. Регистрация</b><span>Занимает 2 минуты без привязки банковской карты</span></li>
+      <li><b>Шаг 2. Импорт номенклатуры</b><span>Загрузка товаров и цен из Excel за 10 минут</span></li>
+      <li><b>Шаг 3. Первый чек</b><span>Готовность к продажам с любого устройства</span></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© {{year}} {{site_name}} · {{domain}}</p>
+</footer>
+</body>
+</html>
